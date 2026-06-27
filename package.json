@@ -1,0 +1,25 @@
+{
+  "name": "announcements-api",
+  "version": "1.0.0",
+  "description": "RESTful API for announcements board homework",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:studio": "prisma studio",
+    "seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "better-sqlite3": "latest",
+    "celebrate": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "prisma": "^6.19.3",
+    "swagger-jsdoc": "latest",
+    "swagger-ui-express": "latest"
+  }
+}

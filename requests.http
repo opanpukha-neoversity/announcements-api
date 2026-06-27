@@ -1,0 +1,66 @@
+### GET /announcements without params
+GET http://localhost:3000/announcements
+
+### GET /announcements with search
+GET http://localhost:3000/announcements?search=asus
+
+### GET /announcements with sort and page
+GET http://localhost:3000/announcements?sort=oldest&page=1
+
+### GET /announcements/:id existing
+GET http://localhost:3000/announcements/1
+
+### GET /announcements/:id non-existing
+GET http://localhost:3000/announcements/999999
+
+### POST /announcements valid
+POST http://localhost:3000/announcements
+Content-Type: application/json
+
+{
+  "title": "Продам ноутбук ASUS",
+  "description": "Ноутбук у відмінному стані, 16GB RAM, SSD 512GB",
+  "price": 18000,
+  "category": "sale",
+  "contactInfo": "0991234567"
+}
+
+### POST /announcements invalid
+POST http://localhost:3000/announcements
+Content-Type: application/json
+
+{
+  "title": "Bad",
+  "description": "short",
+  "price": -5,
+  "category": "wrong",
+  "contactInfo": "1"
+}
+
+### PATCH /announcements/:id partial update
+PATCH http://localhost:3000/announcements/1
+Content-Type: application/json
+
+{
+  "price": 17000
+}
+
+### PATCH /announcements/:id empty body invalid
+PATCH http://localhost:3000/announcements/1
+Content-Type: application/json
+
+{}
+
+### PATCH /announcements/:id non-existing
+PATCH http://localhost:3000/announcements/999999
+Content-Type: application/json
+
+{
+  "price": 15000
+}
+
+### DELETE /announcements/:id existing
+DELETE http://localhost:3000/announcements/1
+
+### DELETE /announcements/:id non-existing
+DELETE http://localhost:3000/announcements/999999
